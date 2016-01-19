@@ -1,0 +1,1 @@
+<div class="date"><?php _e('Sorry, no results were found.', 'roots'); ?></div>
