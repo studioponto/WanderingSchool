@@ -30,7 +30,7 @@ var Roots = {
 function e() {
   window.location = linkLocation;
 }
-$("a").click(function (t) {
+$("").click(function (t) {
     t.preventDefault();
     linkLocation = this.href;
     $("#spinner").fadeIn(500, e);
@@ -43,6 +43,11 @@ $(window).bind("resize", function() {
 
   var header = $('header').height();
   var footer = $('footer').height();
+
+
+  $('.p-single,.p-wrap').width((width*67)/100);
+  $('.floorplan_inside').width((width*67)/100);
+  $('.floorplan_inside').height(height);
 
   
   if( window.innerHeight > window.innerWidth && width > 992){
@@ -85,6 +90,157 @@ $(window).bind("resize", function() {
 
 }).trigger("resize");
 
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+var scrollinit = (function() { var that = {};  that.init = function () {
+
+$(".p-wrap").niceScroll({
+  zindex: '999999999',
+  cursorcolor: "#999",
+  cursoropacitymin: 0,
+  cursoropacitymax: 1,
+  cursorwidth: "5px",
+  cursorborder: "1px solid rgba(255,255,255,0.5)",
+  cursorborderradius: "0",
+  railpadding: { top: 2, right: 2, left: 2, bottom: 2 }
+}).resize();
+
+}; return that; })();
+
+scrollinit.init();
+
+
+var thumb=$('.thumb');
+
+$( thumb ).mouseenter(function() {
+        var id = $(this).attr('data-thumb');
+        $('#thumb_'+id).each(function(i){
+            $(this).addClass('selected'); // $(this), not the id element
+        });
+        $('#project_thumbs').addClass('selected');
+    
+  }).mouseleave(function() {
+        var id = $(this).attr('data-thumb');
+        $('#thumb_'+id).each(function(i){
+            $(this).removeClass('selected'); // $(this), not the id element
+        });
+        $('#project_thumbs').removeClass('selected');
+});
+
+
+/** floorplan */
+$('.floorplan_slide').slick({
+  vertical:true,
+  dots:true,
+  arrows:false,
+  infinite: false,
+  draggable:false,
+});
+$('.floorplan_slide').slick('slickGoTo',1);
+
+  $('.floorplan_slide .slick-dots li:first-child a').text('Basement');
+  $('.floorplan_slide .slick-dots li:nth-child(2) a').text('Ground Floor');
+  $('.floorplan_slide .slick-dots li:nth-child(3) a').text('First Floor');
+  $('.floorplan_slide .slick-dots li:last-child a').text('Second Floor');
+
+$('[data-toggle="tooltip"]').tooltip();
+
+/* ==========================================================================
+   Single Link
+   ========================================================================== */
+$.ajaxSetup({cache:false});
+$("a.p-link").click(function(){
+    var post_div = $(this).closest('section');
+    var post_link = $(this).attr("href");
+
+    $('section').removeClass('close');
+    $('section').removeClass('active');
+    $(post_div).addClass('active');
+    $(post_div).prevAll().addClass('close');
+    $(post_div).nextAll().addClass('close');
+
+  return false;
+});
+
+/*click*/
+$('a.p-link').click(function(){
+
+});
+
+
+/* ==========================================================================
+   Single Link
+   ========================================================================== */
+$.ajaxSetup({cache:false});
+$(".thumb a").click(function(){
+    $('.single_load').fadeIn(0);
+    var post_div = $(this);
+    $('.single_post').addClass('loading');
+    $('.single_post').fadeIn(700);
+    $('#project_thumbs').removeClass('selected');
+
+    var post_link = $(this).attr("href");
+
+      $('.single_post .p-single').load(post_link, function (){
+        $('.single_slides').slick({
+            dots:false,
+            arrows: true,
+            infinite: true,
+            draggable:false,
+        });
+
+        $('.single_post .p-single').imagesLoaded( function() {
+          $('.single_post').removeClass('loading');
+          $('.single_load').fadeOut(700);
+        });
+      });
+  return false;
+});
+
+/*click*/
+$('.single-close').click(function(){
+ $('.single_post').fadeOut(700);
+});
+
+
+
+/** call on page **/
+if ($("body").hasClass("single-post")) {
+    var post_div = $('section#projects');
+
+    $('section').removeClass('close');
+    $('section').removeClass('active');
+    $(post_div).addClass('active');
+    $(post_div).prevAll().addClass('close');
+    $(post_div).nextAll().addClass('close');
+
+    $('.single_post').fadeIn(0);
+    $('.single_load').fadeOut(0);
+
+    $('.single_slides').slick({
+        dots:false,
+        arrows: true,
+        infinite: true,
+        pauseOnHover: false,
+        draggable:false,
+    });
+}
+
+/*projects inits*/
+var projects = (function() { var that = {};  that.init = function () {
+}; return that; })();
+/*programme inits*/
+var programme = (function() { var that = {};  that.init = function () {
+}; return that; })();
+/*floorplan inits*/
+var floorplan = (function() { var that = {};  that.init = function () {
+  
+}; return that; })();
+/*information inits*/
+var information = (function() { var that = {};  that.init = function () {
+}; return that; })();
 
 
     }

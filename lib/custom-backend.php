@@ -171,7 +171,7 @@ function remove_links_menu() {
     remove_menu_page('link-manager.php'); // Links
     remove_menu_page('tools.php'); // Tools
     //remove_menu_page('edit.php'); // Blogs
-    remove_menu_page('options-general.php'); // options-general
+    //remove_menu_page('options-general.php'); // options-general
     remove_menu_page('plugins.php'); // Plugins
     remove_submenu_page( 'index.php', 'update-core.php' );
     remove_submenu_page( 'themes.php', 'themes.php?page=admin-bar' );
@@ -180,10 +180,10 @@ function remove_links_menu() {
     remove_submenu_page( 'themes.php', 'themes.php' );
     //remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
     //remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
-    remove_menu_page('themes.php'); // Themes 
-    remove_menu_page('edit.php?post_type=page'); // pages
+    //remove_menu_page('themes.php'); // Themes 
+    //remove_menu_page('edit.php?post_type=page'); // pages
     remove_menu_page('edit-comments.php'); // comments  
-    remove_menu_page('upload.php'); // comments  
+    //remove_menu_page('upload.php'); // comments  
 }
 
 /**

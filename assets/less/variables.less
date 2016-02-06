@@ -7,7 +7,12 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@brand-primary:         #000;
+@brand-primary: #000;
+
+@c-projects: #929292;
+@c-programme: #000;
+@c-floorplan: #ff3333;
+@c-information: #ececec;
 
 //== Scaffolding
 //
@@ -28,8 +33,10 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  font_sans,  Arial, sans-serif;
+@sans-serif:  @font-family-sans-serif;
+@font-family-serif:    font_serif,   Georgia, "Times New Roman", Times, serif;
+@serif:       @font-family-serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -112,9 +119,9 @@
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-@grid-columns:              4;
+@grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         20px;
+@grid-gutter-width:         30px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
