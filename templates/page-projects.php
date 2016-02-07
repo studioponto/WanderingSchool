@@ -4,6 +4,8 @@
 $args = array(
   'paged' => $paged,
   'posts_per_page' => -1,
+  'order'    => 'ASC',
+  'orderby' => 'title'
 );
 query_posts($args);
 ?>

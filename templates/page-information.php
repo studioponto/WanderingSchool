@@ -1,4 +1,14 @@
-<?php $my_query = new WP_Query('page_id=7'); while ($my_query->have_posts()) : $my_query->the_post(); $do_not_duplicate = $post->ID;?>
+<?php
+$the_slug = 'information';
+$args = array(
+  'name'        => $the_slug,
+  'post_type'   => 'page',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$my_posts = get_posts($args);
+if( $my_posts ) : ?>
+<?php $infoid = $my_posts[0]->ID; $my_query = new WP_Query('page_id='.$infoid); while ($my_query->have_posts()) : $my_query->the_post(); $do_not_duplicate = $post->ID;?>
 <article <?php post_class(); ?>>
 <div class="container-fluid">
 	<div class="col-xs-12">
@@ -7,3 +17,4 @@
 </div>
 </article>
 <?php endwhile; ?>
+<?php endif; ?>
