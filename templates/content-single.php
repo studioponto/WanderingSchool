@@ -48,10 +48,11 @@ $images = get_field('images');
 <?php endif; ?>
 <div class="clearfix"></div>
 
-<div class="single_description col-xs-8">
+<div class="single_description col-xs-12 col-md-offset-1 col-md-10">
     <?php echo $description;?>
 </div>
 
+<!--
 <div class="single_tools col-xs-4">
 <?php if($room):?>
     <ul>
@@ -65,7 +66,7 @@ $images = get_field('images');
     <?php wp_reset_postdata(); ?>
 <?php endif;?>
 </div>
-
+-->
 
 </div>
 </article>
