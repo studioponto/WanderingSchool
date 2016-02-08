@@ -190,3 +190,80 @@ function custom_active_item_classes($classes = array(), $menu_item = false){
         return $classes;
     }
 add_filter( 'nav_menu_css_class', 'custom_active_item_classes', 10, 2 );
+
+
+/*-------------------------------------------------------------------------------
+    Custom Columns
+-------------------------------------------------------------------------------*/
+
+$model_pic = "<?php get_field('model_photo'); ?>";
+
+add_filter( 'manage_edit-model_columns', 'my_columns_filter', 10, 1 );
+function my_columns_filter( $columns ) {
+    $column_thumbnail = array( 'thumbnail' => 'Model Photo' );
+    
+    $columns = array_slice( $columns, 0, 1, true ) + $column_thumbnail + array_slice( $columns, 1, NULL, true );
+    
+    return $columns;
+}
+add_action( 'manage_posts_custom_column', 'my_column_action', 10, 1 );
+function my_column_action( $column ) {
+    global $post;
+    switch ( $column ) {
+        case 'thumbnail':
+            echo '<img src="' . $model_pic . '" width="100" />';
+            break;
+    }
+}
+/*-------------------------------------------------------------------------------
+    Events Columns
+-------------------------------------------------------------------------------*/
+
+function my_page_columns($columns)
+{
+    $columns = array(
+        'cb'        => '<input type="checkbox" />',
+        'project' =>  'Project',
+        'title'     => 'Title',
+        'event-date'  => 'Event Date',
+        'event-time' => 'Time'
+    );
+    return $columns;
+}
+
+function my_custom_columns($column)
+{
+    global $post;
+
+    $project = get_field('related_project');
+    $start_t = get_field('start_time');
+    $end_t = get_field('end_time');
+    $show_end_t = get_field('show_end_time');
+
+    $date = DateTime::createFromFormat('Ymd', get_field('date'));
+
+    if($column == 'project')
+    {
+       
+    if( $project){
+     //print_r($project);
+     echo $project->post_title;
+    }
+
+    }
+    elseif($column == 'event-date')
+    {
+       echo $date->format('d-m-Y');
+    }
+    elseif($column == 'event-time')
+    {
+       echo $start_t;
+       if($show_end_t){
+        echo ' to ' . $end_t;
+       }
+    }
+}
+
+add_action("manage_events_posts_custom_column", "my_custom_columns");
+add_filter("manage_edit-events_columns", "my_page_columns");
+
