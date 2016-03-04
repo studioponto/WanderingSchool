@@ -18,10 +18,13 @@
     </div>
   <![endif]-->
 
+
 <!--Splash-->
 <div id="spinner">
-  <div class="brand">
-    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" />
+  
+
+  <div class="brand" >
+    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" data-depth="0.60" />
   </div>
   <div class="loader"></div>
 </div>

@@ -31,7 +31,8 @@ img{max-width: 100%;}
 a,
 a:link,
 a:visited,
-.btn {
+.btn,
+#information article a:after {
   -webkit-transition-property: color, background, opacity, border-color;
   -moz-transition-property: color, background, opacity, border-color;
   -o-transition-property: color, background, opacity, border-color;
@@ -40,6 +41,7 @@ a:visited,
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s; }
+
 
 
 /* load */
@@ -95,20 +97,43 @@ transform: translate(100%,0);}
 
 .section_inside{position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; display: block;}
 
+
+
+
 /* ==========================================================================
    Base
    ========================================================================== */
 
+/*background*/
+.background{background:transparent; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.background{opacity: 0;
+-webkit-transition-property: width,opacity;
+-moz-transition-property: width,opacity;
+-o-transition-property: width,opacity;
+transition-property: width,opacity;
+-webkit-transition-duration: 0.3s;
+-moz-transition-duration: 0.3s;
+-o-transition-duration: 0.3s;
+transition-duration: 0.3s;}
+.background.back_active{opacity: 1}
+.background img{ max-height: 85%; max-width: 85%;margin: auto;position: absolute;top: 0;left: 0;bottom: 0; right: 0; height: auto; width: auto;}
+.scene,
+.layer{ padding: 0; margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; display: block; }
+.layer {overflow: visible;}
+
+/*general*/
 body{-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 14px; line-height: 1.4;  }
 img{max-width: 100%; height: auto; display: block; width: auto;}
 header{}
 
-.container-fluid{max-width: 1000px;}
+.container-fluid{}
 .hide{display: none !important;}
 
-.wrap-section{position: fixed; top: 0; left: 0; width: 100%; height: 100%;}
+.wrap-section,
+#background{position: fixed; top: 0; left: 0; width: 100%; height: 100%;}
+.wrap-section{z-index: 1;}
 
-section{display: block; position: relative; width:25%; display: block; height: 100%; float: left; overflow: hidden;
+section{display: block; position: relative; width:33.333%; display: block; height: 100%; float: left; overflow: hidden;
 -webkit-transition-property: width;
 -moz-transition-property: width;
 -o-transition-property: width;
@@ -116,13 +141,22 @@ transition-property: width;
 -webkit-transition-duration: 0.3s;
 -moz-transition-duration: 0.3s;
 -o-transition-duration: 0.3s;
-transition-duration: 0.3s;}
-section.close{width: 11%;}
+transition-duration: 0.3s; z-index: 2}
+section.close{width: 16.5%;}
 section.active{width: 67%;}
-#projects{background: @c-projects;}
-#programme{background: @c-programme;}
-#floorplan{background: @c-floorplan;}
-#information{background: @c-information;}
+#projects{}
+#back_projects{background: @light-grey;}
+#back_projects .background{left: 0; width: 300%}
+#programme{}
+#back_programme{background: transparent;}
+#back_programme .background{}
+#information{}
+#back_information{background: @grey;}
+#back_information .background{left: auto; right: 0;width: 300%}
+
+#back_background{background: @neon-blue; width: 100%; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+
+/*back active states*/
 
 .p-link,
 .p-wrap{position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block;}
@@ -133,19 +167,19 @@ section.active .p-link{display: none;}
 
 /***/
 article{padding: 120px 0 20px; display: block; position: relative; height: auto; overflow: hidden; width: 100%;}
-.container-fluid{padding: 0 15px;}
+.container-fluid{padding: 0 10px;}
 
 .page-title{position: absolute; top: 0; left: 0; width: 100%;padding: 0; margin: 0; z-index: 99;}
-.page-title h1{padding: 20px 30px;}
-h1{font-family: @sans-serif; margin: 0 0 50px; padding: 0; display: block; font-family: 40px;}
+.page-title h1{padding: 20px 20px;}
+h1{font-family: @sans-serif; margin: 0 0 50px; padding: 0; display: block; font-size: 30px;}
 
 /* ==========================================================================
    Projects
    ========================================================================== */
-#projects article{padding-top: 97px}
+#projects article{padding-top: 97px; color: @black;}
 /*overview*/
 .thumb{text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
-.thumb a{color: #fff; display: block; overflow: hidden; position: relative;}
+.thumb a{color: @black; display: block; overflow: hidden; position: relative;}
 .preview{display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .preview img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
 .thumb_info,
@@ -189,7 +223,7 @@ transform: translate(0px,-5px);
 .single_post .single_load .loader {bottom: 50%;}
 
 
-.single_title{color:#fff; text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
+.single_title{color:@black; text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
 .single_title h1{font-size: 12px; font-weight: normal; line-height: 1.4; padding: 0; margin: 0; text-transform: uppercase;}
 .single_participant{}
 .single_gallery{padding: 23px 0;}
@@ -208,8 +242,8 @@ transform: translate(0px,-5px);
 /* ==========================================================================
    Event
    ========================================================================== */
-#programme{color: #fff;}
-#programme a{color: #fff;}
+#programme{color: @black;}
+#programme a{color: @black;}
 #programme article{}
 
 .day-wrap{font-size: 18px;  padding: 20px 0; overflow: hidden; display: block; position: relative; }
@@ -219,37 +253,18 @@ transform: translate(0px,-5px);
 .event_time,.event_title{display: block; width: 100%; position: relative;}
 .event_time{text-decoration: underline;}
 
-/* ==========================================================================
-   Information
-   ========================================================================== */
-#floorplan{}
-#floorplan .p-single{height: 100%;}
-#floorplan article{position: absolute; top: 0px; left:0px; right:0px; bottom:0px; padding: 0;width: auto; height: auto; }
-.floorplan_slide{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-.floorplan_inside{display: block; overflow: hidden; position: relative; height: auto; width: 100%;}
-.floorplan_slide .slick-dots li{border-left: 0; border-bottom: 0;}
-.floorplan_slide .slick-dots li:last-child{border-right: 0;}
-
-.floorplan_slide .slick-dots li a{font-size: 12px; width: 100%; height: 100%; line-height: 40px; color: #fff; background: @c-floorplan; font-family: @serif; font-size: 16px;}
-.floorplan_slide .slick-dots li.slick-active a{background: #000;}
-.floorplan_inside_in{width: 600px; height: 600px; position: absolute; top: 50%; left: 50%; margin: -300px 0 0 -300px;}
-
-.fp_tt{display: block; position: absolute; top: 0; left: 0; width: 50px; height: 50px; cursor: pointer; background:transparent; border:1px solid #fff;}
-.fp_tt_basement{top:157px; left: 172px; width: 381px;height: 299px;}
-.fp_tt_hall{top:198px; left: 170px; width: 260px;height:260px;}
-.fp_tt_salon{top:157px; left: 482px; width: 72px;height: 188px;}
-.fp_tt_entrance{top:470px; left: 170px; width: 185px;height: 50px;}
-.fp_tt_hotel{top:217px; left: 45px; width: 71px;height: 123px;}
-.fp_tt_hangar{top:155px; left: 483px; width: 71px;height: 313px;}
-
 
 /* ==========================================================================
    Information
    ========================================================================== */
-#information article{font-size: 40px; line-height:48px;font-family: @serif; }
-#information article p{margin: 0 0 50px; max-width: 800px;}
+#information{color:@white;}
+#information article{font-size: 22px; line-height:1.2;font-family: @display; }
+#information article p{padding: 0;margin: 0;}
+#information article p:after{content: '';width: 100%; display: inline-block;}
 #information article p:last-child{margin: 0;}
-
+#information article a{display: inline-block; color: @white; position: relative;}
+#information article a:after{content:'';border-bottom: 1px solid @neon-blue; position: absolute; bottom: 7px; left: 1px; right: 1px;}
+#information article a:hover:after{border-color: @black;}
 
 /* ==========================================================================
    Media Queries

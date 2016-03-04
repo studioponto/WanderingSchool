@@ -71,13 +71,14 @@ add_action('admin_head', 'admin_color_scheme');
 function my_custom_login_logo() {
     echo '<style type="text/css">
     body.login {
-        background-color: #efefef;
+        background-color: #ececec;
+        font-family:Arial !important;
     }
     h1 a {
-        background-image:url() !important;
-        background-size: 138px !important;
+        background-image:url('.get_bloginfo('template_url').'/assets/img/logo.svg) !important;
+        background-size: 200px !important;
         width:100% !important;
-        height: 28px !important;
+        height: 80px !important;
     }
     .login form {
         background:transparent !important;
@@ -92,33 +93,40 @@ function my_custom_login_logo() {
     }
     .login #nav a,
     .login #backtoblog a {
-        color:#333333 !important;
+        color:#000 !important;
         text-shadow: none !important;
     }
     .login #nav a:hover,
     .login #backtoblog a:hover {
-        color:#ccc !important;
+        color:#444 !important;
     }
     input.button-primary,
     button.button-primary,
     a.button-primary {
-        border-color: #333333 !important;
-        background: #333333 !important;
-        color:#fff !important;
+        border-color: #000 !important;
+        background: #000 !important;
+        color:#33ffff !important;
         text-shadow: rgba(0, 0, 0, 0) 0 0px 0 !important;
         -webkit-box-shadow: inset 0 0px 0 rgba(120,200,230,0.0) !important;
         box-shadow: inset 0 0px 0 rgba(120,200,230,0.0) !important;
+        width:100%;
+        text-transform:uppercase;
+        font-size:20px;
+        letter-spacing:0.1em;
+        height:37px !important;
+            padding: 4px 12px 7px !important;
     }
+    .forgetmenot {display:none !important;}
     input.button-primary:hover,
     button.button-primary:hover,
     a.button-primary:hover {
-        border-color: #111 !important;
-        background: #111 !important;
-        color:#fff !important;
+        border-color: #444 !important;
+        background: #444 !important;
+        color:#33ffff !important;
         text-shadow: rgba(0, 0, 0, 0) 0 0px 0 !important;
     }
     .login label {
-        color: #333333 !important;
+        color: #000 !important;
         font-size: 14px;
     }
     </style>';

@@ -44,10 +44,17 @@ $(window).bind("resize", function() {
   var header = $('header').height();
   var footer = $('footer').height();
 
+  var widthsection = ((width*67)/100);
+  var widthsectionclose = ((width-widthsection)/2);
 
-  $('.p-single,.p-wrap').width((width*67)/100);
-  $('.floorplan_inside').width((width*67)/100);
+
+  $('.p-single,.p-wrap').width(widthsection);
+  $('.floorplan_inside').width(widthsection);
   $('.floorplan_inside').height(height);
+
+  $('.background').width(width);
+  $('.background').addClass('back_active');
+
 
   
   if( window.innerHeight > window.innerWidth && width > 992){
@@ -87,12 +94,16 @@ $(window).bind("resize", function() {
   /** jump **/
 
 
-
 }).trigger("resize");
 
 /* ==========================================================================
    General
    ========================================================================== */
+
+$('.scene').parallax({
+  
+});
+
 
 var scrollinit = (function() { var that = {};  that.init = function () {
 
@@ -154,12 +165,17 @@ $.ajaxSetup({cache:false});
 $("a.p-link").click(function(){
     var post_div = $(this).closest('section');
     var post_link = $(this).attr("href");
+    var post_div_id = $(post_div).attr("id");
 
     $('section').removeClass('close');
     $('section').removeClass('active');
     $(post_div).addClass('active');
     $(post_div).prevAll().addClass('close');
     $(post_div).nextAll().addClass('close');
+
+    $('#back_'+post_div_id).addClass('active');
+    $('#back_'+post_div_id).prevAll().addClass('close');
+    $('#back_'+post_div_id).nextAll().addClass('close');
 
   return false;
 });

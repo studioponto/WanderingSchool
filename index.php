@@ -2,6 +2,7 @@
 
 <!--Projects-->
 <section id="projects">
+<!--
 <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/projects/"></a>
 	<div class="page-title">
@@ -26,10 +27,12 @@
 	</div>
 </div>
 <?php get_template_part('templates/page','projects-thumbs'); ?>
+-->
 </section>
 
 <!--Programme-->
 <section id="programme">
+<!--
 <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/programme/"></a>
 	<div class="page-title">
@@ -41,22 +44,9 @@
 		</div>
 	</div>
 </div>
+-->
 </section>
 
-<!--Floorplan-->
-<section id="floorplan">
-<div class="section_inside">
-	<a class="p-link" href="<?php echo home_url(); ?>/floorplan/"></a>
-	<div class="page-title">
-		<h1>Floorplan</h1>
-	</div>
-	<div class="p-wrap">
-		<div class="p-single">
-			<?php get_template_part('templates/page','floorplan'); ?>
-		</div>
-	</div>
-</div>
-</section>
 
 <!--Information-->
 <section id="information">
@@ -73,5 +63,7 @@
 	</div>
 </div>
 </section>
+
+
 
 <?php get_template_part('templates/footer'); ?>

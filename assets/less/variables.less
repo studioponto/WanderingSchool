@@ -9,10 +9,21 @@
 
 @brand-primary: #000;
 
-@c-projects: #929292;
-@c-programme: #000;
+@red: #f33;
+@neon-blue: #3ff;
+
+@dark-grey: #666;
+@grey: #999;
+@light-grey: #ececec;
+@black: #000;
+@white: #fff;
+
+
+@c-projects: #f7f7f7;
+@c-programme: #33ffff;
 @c-floorplan: #ff3333;
-@c-information: #ececec;
+@c-information: #999999;
+
 
 //== Scaffolding
 //
@@ -33,13 +44,16 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  font_sans,  Arial, sans-serif;
+
+@font-family-display:  'tws_display',  Arial, sans-serif;
+@display:  @font-family-display;
+@font-family-sans-serif:  'tws_display',  Arial, sans-serif;
 @sans-serif:  @font-family-sans-serif;
-@font-family-serif:    font_serif,   Georgia, "Times New Roman", Times, serif;
+@font-family-serif:    'tws_serif',   Georgia, "Times New Roman", Times, serif;
 @serif:       @font-family-serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+@font-family-base:        @serif;
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -121,7 +135,7 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         20px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
