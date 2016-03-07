@@ -116,13 +116,13 @@ transition-property: width,opacity;
 -o-transition-duration: 0.3s;
 transition-duration: 0.3s;}
 .background.back_active{opacity: 1}
-.background img{ max-height: 85%; max-width: 85%;margin: auto;position: absolute;top: 0;left: 0;bottom: 0; right: 0; height: auto; width: auto;}
+/*.background img{ max-height: 85%; max-width: 85%;margin: auto;position: absolute;top: 0;left: 0;bottom: 0; right: 0; height: auto; width: auto;}*/
 .scene,
 .layer{ padding: 0; margin: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; display: block; }
 .layer {overflow: visible;}
-
+.scene{top: -5%; left: -5%; right: -5%; bottom: -5%; width: auto; height: auto;}
 /*general*/
-body{-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 14px; line-height: 1.4;  }
+body{color:@white;-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 14px; line-height: 1.4;  }
 img{max-width: 100%; height: auto; display: block; width: auto;}
 header{}
 
@@ -154,7 +154,11 @@ section.active{width: 67%;}
 #back_information{background: @grey;}
 #back_information .background{left: auto; right: 0;width: 300%}
 
-#back_background{background: @neon-blue; width: 100%; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+#back_background{background: @grey; width: 100%; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+
+section{-webkit-box-shadow: 0px 0px 100px 50px @neon-blue;
+-moz-box-shadow: 0px 0px 100px 50px @neon-blue;
+box-shadow: 0px 0px 100px 50px @neon-blue;}
 
 /*back active states*/
 
@@ -176,18 +180,18 @@ h1{font-family: @sans-serif; margin: 0 0 50px; padding: 0; display: block; font-
 /* ==========================================================================
    Projects
    ========================================================================== */
-#projects article{padding-top: 97px; color: @black;}
+#projects article{padding-top: 97px; color: @white; padding-right: 8%; padding-left: 8%;}
 /*overview*/
-.thumb{text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
-.thumb a{color: @black; display: block; overflow: hidden; position: relative;}
+.thumb{text-align: center; font-size: 26px; line-height: 1.2;padding-bottom: 23px;padding-top: 23px;}
+.thumb a{color: @white; display: block; overflow: hidden; position: relative;}
 .preview{display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .preview img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
 .thumb_info,
 .thumb_title,
 .thumb_participant,
 .thumb_cat{display: block; width: 100%; height: auto; }
-.thumb_cat{font-family: @serif; font-size:30px; line-height: 30px;}
-.thumb_title{text-transform: uppercase; font-weight: normal;}
+.thumb_cat{font-family: @serif; }
+.thumb_title{ font-weight: normal; font-family: @display;}
 .thumb_participant{ text-transform: uppercase; font-family: @serif; padding-top: 5px;}
 
 .thumb a{
@@ -223,7 +227,7 @@ transform: translate(0px,-5px);
 .single_post .single_load .loader {bottom: 50%;}
 
 
-.single_title{color:@black; text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
+.single_title{color:@white; text-align: center; font-size: 40px; line-height: 46px;padding-bottom: 23px;padding-top: 23px;}
 .single_title h1{font-size: 12px; font-weight: normal; line-height: 1.4; padding: 0; margin: 0; text-transform: uppercase;}
 .single_participant{}
 .single_gallery{padding: 23px 0;}
@@ -242,8 +246,8 @@ transform: translate(0px,-5px);
 /* ==========================================================================
    Event
    ========================================================================== */
-#programme{color: @black;}
-#programme a{color: @black;}
+#programme{color: @white;}
+#programme a{color: @white;}
 #programme article{}
 
 .day-wrap{font-size: 18px;  padding: 20px 0; overflow: hidden; display: block; position: relative; }
@@ -263,8 +267,12 @@ transform: translate(0px,-5px);
 #information article p:after{content: '';width: 100%; display: inline-block;}
 #information article p:last-child{margin: 0;}
 #information article a{display: inline-block; color: @white; position: relative;}
-#information article a:after{content:'';border-bottom: 1px solid @neon-blue; position: absolute; bottom: 7px; left: 1px; right: 1px;}
+#information article a:after{content:'';border-bottom: 1px solid @neon-blue; position: absolute; bottom: 0px; left: 1px; right: 1px;}
 #information article a:hover:after{border-color: @black;}
+
+.sidebar{}
+.sidebar_div{display: block; width: 100%; padding: 0 0 20px; }
+.caption{font-family: @serif; font-size: 16px; padding: 10px 0 0;  display: block; font-weight: bold; }
 
 /* ==========================================================================
    Media Queries

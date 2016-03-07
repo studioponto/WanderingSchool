@@ -100,6 +100,11 @@ $(window).bind("resize", function() {
    General
    ========================================================================== */
 
+$('img.fullBleed').fullBleed({
+  className: 'fullbleedimg'
+});
+
+
 $('.scene').parallax({
   
 });

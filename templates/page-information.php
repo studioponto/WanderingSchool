@@ -14,6 +14,24 @@ if( $my_posts ) : ?>
 	<div class="col-xs-9">
 		<?php the_content(); ?>
 	</div>
+
+	<div class="col-xs-3 sidebar">
+		<?php if( have_rows('sidebar') ): while ( have_rows('sidebar') ) : the_row();?>
+        <?php if( get_row_layout() == 'image' ):
+        	$image = get_sub_field('image');
+        	$caption = get_sub_field('caption');
+        	?>
+        	<div class="sidebar_div">
+        	<img src="<?php echo $image;?>">
+        	<?php if($caption):?>
+        		<div class="caption"><?php echo $caption;?></div>
+        	<?php endif;?>
+        	</div>
+        <?php elseif( get_row_layout() == 'text' ): ?>
+        <?php endif; endwhile; endif;?>
+    </div>
+
+
 </div>
 </article>
 <?php endwhile; ?>

@@ -2,7 +2,7 @@
 
 <!--Projects-->
 <section id="projects">
-<!--
+
 <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/projects/"></a>
 	<div class="page-title">
@@ -27,12 +27,12 @@
 	</div>
 </div>
 <?php get_template_part('templates/page','projects-thumbs'); ?>
--->
+
 </section>
 
 <!--Programme-->
 <section id="programme">
-<!--
+
 <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/programme/"></a>
 	<div class="page-title">
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 </div>
--->
+
 </section>
 
 
