@@ -45,9 +45,24 @@ a:visited,
 
 
 /* load */
-#spinner{background:transparent; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999999999;}
-.brand{display: block; width: 50%; position: absolute; top: 0; left: 25%; height: 100%; overflow: hidden;}
+#spinner{background:@black; position: fixed; top:50%; left:50%; transform: translate(-50%, -50%); width: 2000px; height: 2000px; border-radius:100%;  z-index: 9999999999; overflow: hidden;}
+#spinner{ -webkit-transition-property: width, height, left, top, color, background, opacity, border-color;
+  -moz-transition-property: width, height, left, top, color, background, opacity, border-color;
+  -o-transition-property: width, height, left, top, color, background, opacity, border-color;
+  transition-property: width, height, left, top, color, background, opacity, border-color;
+  -webkit-transition-duration: 2s;
+  -moz-transition-duration: 2s;
+  -o-transition-duration: 2s;
+  transition-duration: 2s;}
+#spinner.loadcomplete{width:0; height: 0; }
+
+.brand{display: block; width: 500px;height: 500px; top: 50%; left: 50%; margin-top: -250px; margin-left: -250px; position: absolute; overflow: hidden;}
 .brand img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
+
+.shadow {
+    -webkit-filter: drop-shadow( 0px 0px 10px #000 );
+            filter: drop-shadow( 0px 0px 10px #000 ); /* Same syntax as box-shadow */
+}
 
 .loader {
   position: absolute; bottom: 25%; left: 50%; margin: 0 0 -15px -15px;
@@ -80,8 +95,8 @@ a:visited,
 
 
 .splash-active{}
-.wrap-section .section_inside{-ms-transform: translate(0,0); /* IE 9 */
--webkit-transform: translate(0,0); /* Safari */
+/*.wrap-section .section_inside{-ms-transform: translate(0,0);
+-webkit-transform: translate(0,0);
 transform: translate(0,0);
 -webkit-transition-property: -webkit-transform;
 -moz-transition-property: -moz-transform;
@@ -91,9 +106,9 @@ transition-property: transform;
 -moz-transition-duration: 0.3s;
 -o-transition-duration: 0.3s;
 transition-duration: 0.3s;}
-.wrap-section.splash-active .section_inside{-ms-transform: translate(100%,0); /* IE 9 */
--webkit-transform: translate(100%,0); /* Safari */
-transform: translate(100%,0);}
+.wrap-section.splash-active .section_inside{-ms-transform: translate(100%,0);
+-webkit-transform: translate(100%,0);
+transform: translate(100%,0);}*/
 
 .section_inside{position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; display: block;}
 
@@ -122,7 +137,7 @@ transition-duration: 0.3s;}
 .layer {overflow: visible;}
 .scene{top: -5%; left: -5%; right: -5%; bottom: -5%; width: auto; height: auto;}
 /*general*/
-body{color:@white;-webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 14px; line-height: 1.4;  }
+body{color:@black; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 14px; line-height: 1.4;  }
 img{max-width: 100%; height: auto; display: block; width: auto;}
 header{}
 
@@ -144,21 +159,19 @@ transition-property: width;
 transition-duration: 0.3s; z-index: 2}
 section.close{width: 16.5%;}
 section.active{width: 67%;}
-#projects{}
-#back_projects{background: @light-grey;}
+#projects{z-index: 9;}
+#back_projects{background: @grey;}
 #back_projects .background{left: 0; width: 300%}
 #programme{}
 #back_programme{background: transparent;}
 #back_programme .background{}
-#information{}
+#information{background: #ccc;}
 #back_information{background: @grey;}
 #back_information .background{left: auto; right: 0;width: 300%}
 
-#back_background{background: @grey; width: 100%; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
+#back_background{background: @light-grey; width: 100%; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;}
 
-section{-webkit-box-shadow: 0px 0px 100px 50px @neon-blue;
--moz-box-shadow: 0px 0px 100px 50px @neon-blue;
-box-shadow: 0px 0px 100px 50px @neon-blue;}
+
 
 /*back active states*/
 
@@ -170,20 +183,21 @@ box-shadow: 0px 0px 100px 50px @neon-blue;}
 section.active .p-link{display: none;}
 
 /***/
-article{padding: 120px 0 20px; display: block; position: relative; height: auto; overflow: hidden; width: 100%;}
+article{padding: 20px 0 20px; display: block; position: relative; height: auto; overflow: hidden; width: 100%;}
 .container-fluid{padding: 0 10px;}
 
-.page-title{position: absolute; top: 0; left: 0; width: 100%;padding: 0; margin: 0; z-index: 99;}
-.page-title h1{padding: 20px 20px;}
+.page-title{position: absolute; top: 0; left: 0; width: 100%;padding: 0; margin: 0; z-index: 99; font-weight: normal; display: none;}
+.page-title h1{padding: 20px 20px; font-weight: normal;}
 h1{font-family: @sans-serif; margin: 0 0 50px; padding: 0; display: block; font-size: 30px;}
 
 /* ==========================================================================
    Projects
    ========================================================================== */
-#projects article{padding-top: 97px; color: @white; padding-right: 8%; padding-left: 8%;}
+#projects{color: @black;}
+#projects article{padding-top: 20px;  }
 /*overview*/
-.thumb{text-align: center; font-size: 26px; line-height: 1.2;padding-bottom: 23px;padding-top: 23px;}
-.thumb a{color: @white; display: block; overflow: hidden; position: relative;}
+.thumb{text-align: center; font-size: 22px; line-height: 1.2;padding-bottom: 10px;padding-top: 10px;}
+.thumb a{color: @white; display: block; overflow: hidden; position: relative; background: @white;color: @black; padding: 20px;}
 .preview{display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .preview img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
 .thumb_info,
@@ -246,33 +260,38 @@ transform: translate(0px,-5px);
 /* ==========================================================================
    Event
    ========================================================================== */
-#programme{color: @white;}
-#programme a{color: @white;}
+#programme{color: @black;}
+#programme a{color: @black;}
 #programme article{}
 
-.day-wrap{font-size: 18px;  padding: 20px 0; overflow: hidden; display: block; position: relative; }
+.day-wrap{font-size: 20px;  padding: 20px 0; overflow: hidden; display: block; position: relative; }
 .day-title{}
 .day-content{}
 .day-event{display: block; width: 100%;}
-.event_time,.event_title{display: block; width: 100%; position: relative;}
-.event_time{text-decoration: underline;}
+.event_time,.event_title{display: block; width: 100%; position: relative; font-family: @display; font-size: 20px;}
+.event_time{font-family: @serif; font-size: 22px;}
 
 
 /* ==========================================================================
    Information
    ========================================================================== */
-#information{color:@white;}
-#information article{font-size: 22px; line-height:1.2;font-family: @display; }
+#information{background: #ececec}
+#information article{font-size: 24px; line-height:1.3;font-family: @display; }
 #information article p{padding: 0;margin: 0;}
 #information article p:after{content: '';width: 100%; display: inline-block;}
 #information article p:last-child{margin: 0;}
-#information article a{display: inline-block; color: @white; position: relative;}
-#information article a:after{content:'';border-bottom: 1px solid @neon-blue; position: absolute; bottom: 0px; left: 1px; right: 1px;}
+#information article a{display: inline-block; color: @black; position: relative;}
+#information article a:after{content:'';border-bottom: 1px solid @white; position: absolute; bottom: 0px; left: 1px; right: 1px;}
 #information article a:hover:after{border-color: @black;}
 
 .sidebar{}
 .sidebar_div{display: block; width: 100%; padding: 0 0 20px; }
 .caption{font-family: @serif; font-size: 16px; padding: 10px 0 0;  display: block; font-weight: bold; }
+
+a.dad_link{display: block; position: absolute; bottom: 10px; right: 20px;  z-index: 9; width: 90px; height: 30px;}
+a.dad_link span,
+a.dad_link:before,
+a.dad_link:after{content: ''; display: block; width: 20px; height: 20px; background: @black; border-radius: 100%; float: left; margin: 0 5px;} 
 
 /* ==========================================================================
    Media Queries

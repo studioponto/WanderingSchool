@@ -36,3 +36,4 @@ if( $my_posts ) : ?>
 </article>
 <?php endwhile; ?>
 <?php endif; ?>
+

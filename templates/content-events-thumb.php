@@ -40,6 +40,6 @@ $room = get_field('room');
     <?php endif;?>
     <?php the_title();?>
 </div>
-<Br/>
+
 
 </div>

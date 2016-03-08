@@ -24,9 +24,9 @@
   
 
   <div class="brand" >
-    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" data-depth="0.60" />
+    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" class="shadow" />
   </div>
-  <div class="loader"></div>
+  <!-- <div class="loader"></div> -->
 </div>
 
 <div class="wrap-section splash-active">

@@ -61,6 +61,7 @@
 			<?php get_template_part('templates/page','information'); ?>
 		</div>
 	</div>
+	<a class="dad_link" href="http://dirtyartdepartment.com" target="_blank"><span></span></a>
 </div>
 </section>
 
