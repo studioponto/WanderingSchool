@@ -3,7 +3,7 @@
 <!--Projects-->
 <section id="projects">
 
-<div class="section_inside">
+<!-- <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/projects/"></a>
 	<div class="page-title">
 		<h1>Projects</h1>
@@ -27,12 +27,12 @@
 	</div>
 </div>
 <?php get_template_part('templates/page','projects-thumbs'); ?>
-
+ -->
 </section>
 
 <!--Programme-->
 <section id="programme">
-
+<!-- 
 <div class="section_inside">
 	<a class="p-link" href="<?php echo home_url(); ?>/programme/"></a>
 	<div class="page-title">
@@ -43,7 +43,7 @@
 			<?php get_template_part('templates/page','programme'); ?>
 		</div>
 	</div>
-</div>
+</div> -->
 
 </section>
 
@@ -61,7 +61,6 @@
 			<?php get_template_part('templates/page','information'); ?>
 		</div>
 	</div>
-	<a class="dad_link" href="http://dirtyartdepartment.com" target="_blank"><span></span></a>
 </div>
 </section>
 

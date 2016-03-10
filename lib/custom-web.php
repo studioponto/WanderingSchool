@@ -154,7 +154,7 @@ add_action('init', 'events_init');
 * Add room
 **/
 
-/* custom post news events*/
+/* custom post news events
 function rooms_init() {
     register_post_type(
         'rooms',
@@ -177,7 +177,7 @@ function rooms_init() {
     );
 }
 add_action('init', 'rooms_init');
-
+*/
 
 
 /**
