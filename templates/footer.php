@@ -11,8 +11,8 @@
 	$(window).load(function() {
 		setTimeout(function(){
 			$("#spinner").addClass('loadcomplete');
-			$("#spinner").fadeOut(10);
-		}, 300);
+			$("#spinner").fadeOut(100);
+		}, 3000);
 		setTimeout(function(){
 			$(".wrap-section").removeClass('splash-active');
 		}, 3700);
