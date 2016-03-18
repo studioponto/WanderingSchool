@@ -51,6 +51,7 @@ $(window).bind("resize", function() {
   $('.p-single,.p-wrap').width(widthsection);
   $('.floorplan_inside').width(widthsection);
   $('.floorplan_inside').height(height);
+  $('.single_tools').width(widthsection);
 
   $('.background').width(width);
   $('.background').addClass('back_active');
@@ -150,23 +151,6 @@ $( thumb ).mouseenter(function() {
 });
 
 
-/** floorplan */
-$('.floorplan_slide').slick({
-  vertical:true,
-  dots:true,
-  arrows:false,
-  infinite: false,
-  draggable:false,
-});
-$('.floorplan_slide').slick('slickGoTo',1);
-
-  $('.floorplan_slide .slick-dots li:first-child a').text('Basement');
-  $('.floorplan_slide .slick-dots li:nth-child(2) a').text('Ground Floor');
-  $('.floorplan_slide .slick-dots li:nth-child(3) a').text('First Floor');
-  $('.floorplan_slide .slick-dots li:last-child a').text('Second Floor');
-
-$('[data-toggle="tooltip"]').tooltip();
-
 /* ==========================================================================
    Single Link
    ========================================================================== */
@@ -207,31 +191,77 @@ $(".thumb a").click(function(){
     $('.single_load').fadeIn(0);
     var post_div = $(this);
     $('.single_post').addClass('loading');
-    $('.single_post').fadeIn(700);
+    $('.single_post').fadeIn(400);
     $('#project_thumbs').removeClass('selected');
 
     var post_link = $(this).attr("href");
 
       $('.single_post .p-single').load(post_link, function (){
-        $('.single_slides').slick({
-            dots:false,
-            arrows: true,
-            infinite: true,
-            draggable:false,
-        });
+       
 
         $('.single_post .p-single').imagesLoaded( function() {
           $('.single_post').removeClass('loading');
-          $('.single_load').fadeOut(700);
+          $('.single_load').fadeOut(400);
         });
       });
   return false;
 });
 
-/*click*/
-$('.single-close').click(function(){
- $('.single_post').fadeOut(700);
+
+
+$.ajaxSetup({cache:false});
+$("#programme .event_title a").click(function(){
+    $('.single_load').fadeIn(0);
+    var post_div = $(this);
+    $('.single_post').addClass('loading');
+    $('.single_post').fadeIn(400);
+    $('#project_thumbs').removeClass('selected');
+
+    $('section').removeClass('close');
+    $('section').removeClass('active');
+    $('#projects').addClass('active');
+    $('#projects').prevAll().addClass('close');
+    $('#projects').nextAll().addClass('close');
+
+    $('#back_projects').addClass('active');
+    $('#back_projects').prevAll().addClass('close');
+    $('#back_projects').nextAll().addClass('close');
+
+
+    var post_link = $(this).attr("href");
+
+      $('.single_post .p-single').load(post_link, function (){
+       
+
+        $('.single_post .p-single').imagesLoaded( function() {
+          $('.single_post').removeClass('loading');
+          $('.single_load').fadeOut(400);
+        });
+      });
+  return false;
 });
+
+
+/*click*/
+$('.back_projects').click(function(){
+ $('.single_post').fadeOut(400);
+});
+
+
+$('.look_programme').click(function(){
+
+    $('section').removeClass('close');
+    $('section').removeClass('active');
+    $('#programme').addClass('active');
+    $('#programme').prevAll().addClass('close');
+    $('#programme').nextAll().addClass('close');
+
+    $('#back_programme').addClass('active');
+    $('#back_programme').prevAll().addClass('close');
+    $('#back_programme').nextAll().addClass('close');
+});
+
+
 
 
 
@@ -248,13 +278,7 @@ if ($("body").hasClass("single-post")) {
     $('.single_post').fadeIn(0);
     $('.single_load').fadeOut(0);
 
-    $('.single_slides').slick({
-        dots:false,
-        arrows: true,
-        infinite: true,
-        pauseOnHover: false,
-        draggable:false,
-    });
+    
 }
 
 /*projects inits*/

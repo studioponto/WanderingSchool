@@ -1,7 +1,8 @@
 <article>
 
 <div class="container-fluid">
-<div class="day-wrap hide"><div class="day-title col-xs-4">Programme</div><div class="day-content col-xs-8">
+<div class="row"><div class="col-xs-12 col-md-offset-1 col-md-10">
+<div class="day-wrap hide"><div class="day-title col-xs-12">Programme</div><div class="day-content col-xs-8">
 <?php if ( have_posts() ) : ?>
 <?php
 $args = array(
@@ -28,7 +29,7 @@ $args = array(
 ?>
 
 <?php if(date('d', $timesdquery) != $prev_day || date('F', $timesdquery) != $prev_month) {
-	echo '</div></div><div class="day-wrap"><div class="day-title col-xs-4">' . date('D, d F', $timesdquery) . '</div><div class="day-content col-xs-8">';
+	echo '</div></div><div class="day-wrap"><div class="day-title col-xs-12">' . date('l, jS', $timesdquery) . ' of ' . date('F', $timesdquery) . '<hr></div><div class="day-content col-xs-12">';
 } ?>
 
 
@@ -42,6 +43,7 @@ $args = array(
 <?php endif; ?>
 </div>
 </div>
+</div></div>
 
 
 

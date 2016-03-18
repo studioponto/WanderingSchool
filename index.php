@@ -21,8 +21,8 @@
 		<div class="single_tools">
 		    <div class="container-fluid">
 		        <div class="col-xs-12 col-md-offset-1 col-md-10">
-		            <a class="look_programme" href="#">Look up on Programme</a>
-		            <a class="back_projects" href="#">Back to Projects</a>
+		            <a class="look_programme">Look up on Programme</a>
+		            <a class="back_projects">Back to Projects</a>
 		        </div>
 		    </div>
 		</div>
