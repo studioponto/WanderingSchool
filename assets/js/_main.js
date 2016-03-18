@@ -103,9 +103,15 @@ $(window).bind("resize", function() {
 $('img.fullBleed').fullBleed({
   className: 'fullbleedimg'
 });
-$('.grid').packery({
+// init Packery
+var $grid = $('.grid').packery({
   percentPosition: true
 });
+// layout Packery after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.packery();
+});
+
 
 
 var scrollinit = (function() { var that = {};  that.init = function () {

@@ -45,15 +45,15 @@ a:visited,
 
 
 /* load */
-#spinner{background:@black; position: fixed; top:0; left:0; /*transform: translate(-50%, -50%);*/ width: 100%; height: 100%;/* border-radius:100%;*/  z-index: 999; overflow: hidden;}
+#spinner{background:transparent; position: fixed; top:0; left:0; /*transform: translate(-50%, -50%);*/ width: 100%; height: 100%;/* border-radius:100%;*/  z-index: 999; overflow: hidden;}
 
 
 .brand{display: block; width: 100%;height: 100%; top: 0; left: 0; position: absolute; overflow: hidden;}
 .brand img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
 
 .shadow {
-    -webkit-filter: drop-shadow( 0px 0px 5px #000 );
-            filter: drop-shadow( 0px 0px 5px #000 );
+    -webkit-filter: drop-shadow( 0px -5px 5px @neon-blue );
+            filter: drop-shadow( 0px -5px 5px @neon-blue );
 }
 
 .loader {
@@ -89,7 +89,7 @@ a:visited,
 
 
 .splash-active{}
-/*.wrap-section .section_inside{-ms-transform: translate(0,0);
+.wrap-section .section_inside{-ms-transform: translate(0,0);
 -webkit-transform: translate(0,0);
 transform: translate(0,0);
 -webkit-transition-property: -webkit-transform;
@@ -102,7 +102,7 @@ transition-property: transform;
 transition-duration: 0.3s;}
 .wrap-section.splash-active .section_inside{-ms-transform: translate(100%,0);
 -webkit-transform: translate(100%,0);
-transform: translate(100%,0);}*/
+transform: translate(100%,0);}
 
 .section_inside{position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; display: block;}
 
@@ -115,6 +115,8 @@ transform: translate(100%,0);}*/
 ::selection { background: @grey; color:@white; /* WebKit/Blink Browsers */ }
 ::-moz-selection { background: @grey; color:@white;/* Gecko Browsers */}
 
+
+body.loadcomplete{}
 
 /*background*/
 .background{background:transparent; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
@@ -194,7 +196,8 @@ span.tip {
     background: transparent;
     font-family: @sans-serif;
     font-weight: bold;
-    .text-shadow(0 0 5px @white);
+    color: @white;
+    .text-shadow(0 0 5px @neon-blue);
 } 
 
 /***/
@@ -213,54 +216,26 @@ h1{font-family: @sans-serif; margin: 0 0 50px; padding: 0; display: block; font-
 .tws_shadow{background: #000; height: 10px; width: 100%; position: absolute; bottom: 0; left: 0; z-index: 99;
 -webkit-box-shadow: 0px 0px 60px 60px rgba(0,0,0,1);
 -moz-box-shadow: 0px 0px 60px 60px rgba(0,0,0,1);
-box-shadow: 0px 0px 60px 60px rgba(0,0,0,1);}
+box-shadow: 0px 0px 60px 60px rgba(0,0,0,1);
+
+-webkit-transition-property: top, bottom;
+-moz-transition-property: top, bottom;
+-o-transition-property: top, bottom;
+transition-property: top, bottom;
+-webkit-transition-duration: 0.3s;
+-moz-transition-duration: 0.3s;
+-o-transition-duration: 0.3s;
+transition-duration: 0.3s;
+}
 .tws_shadow2{  bottom: auto; top: 0;}
 
 
-a.dad_link,
-a.dad_link span,
-a.dad_link:before,
-a.dad_link:after {
-  -webkit-transition-property: color, background, opacity, border-color;
-  -moz-transition-property: color, background, opacity, border-color;
-  -o-transition-property: color, background, opacity, border-color;
-  transition-property: color, background, opacity, border-color;
-  -webkit-transition-duration: 0s;
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
-  transition-duration: 0s; }
+a.dad_link{display: block; overflow: hidden; position: absolute; bottom: 20px; right: 20px; width: 200px; z-index: 999;}
+a.dad_link img{width: 100%; height: auto; display: block; }
 
-a.dad_link:before{background: @neon-blue;
-  -webkit-animation: dotone 2s infinite steps(1, end);
-  animation: dotone 2s infinite steps(1, end);}
-a.dad_link span{background: @grey;
-  -webkit-animation: dottwo 2s infinite steps(1, end);
-  animation: dottwo 2s infinite steps(1, end);}
-a.dad_link:after{background: @white;
-  -webkit-animation: dotthree 2s infinite steps(1, end);
-  animation: dotthree 2s infinite steps(1, end);}
+body.loadcomplete .tws_shadow1{bottom: -60px;}
+body.loadcomplete .tws_shadow2{top: -60px;}
 
-
-@keyframes dotone {
-  0% { background: @neon-blue; }
-  33% { background: @grey;}
-  66% { background: @white;}
-  100% { background: @neon-blue;}
-}
-
-@keyframes dottwo {
-  0% { background: @white; }
-  33% { background: @neon-blue;}
-  66% { background: @grey;}
-  100% { background: @white;}
-}
-
-@keyframes dotthree {
-  0% { background: @grey; }
-  33% { background: @white;}
-  66% { background: @neon-blue;}
-  100% { background: @grey;}
-}
 
 /* ==========================================================================
    Projects
@@ -268,7 +243,7 @@ a.dad_link:after{background: @white;
 #projects{color: @black;}
 #projects article{padding-top: 40px;  }
 /*overview*/
-.thumb{text-align: center; font-size: 26px; line-height: 1.2;padding-bottom: 0px;padding-top: 0px;}
+.thumb{text-align: center; font-size: 26px; line-height: 1.2;padding-bottom: 0px;padding-top: 0px; overflow: hidden;}
 .thumb a{display: block; overflow: hidden; position: relative; background: transparent; border-bottom:1px solid @black; color: @black; padding: 40px 20px; cursor: pointer;}
 .preview{display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .preview img{max-height: 80%; max-width: 80%; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: auto; width: auto;}
@@ -325,10 +300,20 @@ transform: translate(0px,-5px);
 
 .single-close{cursor: pointer;}
 
-.single_description{padding-top: 26px; padding-bottom: 40px; font-size:24px; line-height:1.3;  }
+.single_description{padding-top: 26px; padding-bottom: 120px; font-size:24px; line-height:1.3;  }
 .single_description p{margin: 0 0 22px;}
 .single_description p:last-child{margin: 0;}
 
+.single_tools{background: @white; height: 60px;  font-size:24px; line-height:1.4;width: 100%; position: absolute; bottom: 0; left: 0; z-index: 99;
+-webkit-box-shadow: 0px 0px 60px 60px @white;
+-moz-box-shadow: 0px 0px 60px 60px @white;
+box-shadow: 0px 0px 60px 60px @white;}
+
+.single_tools a{display: inline-block; color: @black; position: relative;}
+.single_tools a:after{content:'';border-bottom: 1px solid @neon-blue; position: absolute; bottom: 0px; left: 1px; right: 1px;}
+.single_tools a:hover:after{border-color: @black;}
+
+.single_tools a.back_projects{float: right;}
 /* ==========================================================================
    Event
    ========================================================================== */

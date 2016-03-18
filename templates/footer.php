@@ -10,7 +10,11 @@
 <script type="text/javascript">
 	$(window).load(function() {
 		setTimeout(function(){
+			$('.grid').packery({
+				percentPosition: true
+			});
 			$("#spinner").addClass('loadcomplete');
+			$("body").addClass('loadcomplete');
 			$("#spinner").fadeOut(100);
 		}, 3000);
 		setTimeout(function(){

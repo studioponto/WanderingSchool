@@ -18,8 +18,13 @@
 		</div>
 	</div>
 	<div class="single_post">
-		<div class="page-title">
-			<h1 class="single-close">Close</h1>
+		<div class="single_tools">
+		    <div class="container-fluid">
+		        <div class="col-xs-12 col-md-offset-1 col-md-10">
+		            <a class="look_programme" href="#">Look up on Programme</a>
+		            <a class="back_projects" href="#">Back to Projects</a>
+		        </div>
+		    </div>
 		</div>
 
 		<div class="single_load"><div class="loader"></div></div>

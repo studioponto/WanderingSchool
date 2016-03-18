@@ -23,8 +23,11 @@
 <div id="spinner">
   
 
-  <div class="brand" >
-    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" class="shadow" />
+  <div class="brand brand1">
+    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo-wandering.svg" class="shadow" />
+  </div>
+  <div class="brand brand2">
+    <img src="<?php bloginfo('template_url'); ?>/assets/img/logo-school.svg" class="shadow" />
   </div>
   <!-- <div class="loader"></div> -->
 </div>

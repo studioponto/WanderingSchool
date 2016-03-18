@@ -34,6 +34,17 @@ if( function_exists('acf_add_options_page') ) {
         'position' => 3
     ));
 
+
+    $page3 = acf_add_options_page(array(
+        'page_title'    => 'Events',
+        'menu_title'    => 'Events',
+        'menu_slug'     => 'events-settings',
+        'capability'    => 'edit_posts',
+        'redirect'  => false,
+        'position' => 6
+    ));
+
+
     $page2 = acf_add_options_page(array(
         'page_title'    => 'Website Settings',
         'menu_title'    => 'Website Settings',

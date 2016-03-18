@@ -26,8 +26,3 @@ $participant = get_field('participant');
 
 </div>
 </article>
-
-<div class="single_tools">
-    <a class="look_programme" href="#">Look up on Programme</a>
-    <a class="back_projects" href="#">Back to Projects</a>
-</div>
