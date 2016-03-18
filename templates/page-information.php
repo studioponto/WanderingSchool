@@ -11,26 +11,9 @@ if( $my_posts ) : ?>
 <?php $infoid = $my_posts[0]->ID; $my_query = new WP_Query('page_id='.$infoid); while ($my_query->have_posts()) : $my_query->the_post(); $do_not_duplicate = $post->ID;?>
 <article <?php post_class(); ?>>
 <div class="container-fluid">
-	<div class="col-xs-9">
+	<div class="col-xs-12 col-md-10 col-md-offset-1">
 		<?php the_content(); ?>
 	</div>
-
-	<div class="col-xs-3 sidebar">
-		<?php if( have_rows('sidebar') ): while ( have_rows('sidebar') ) : the_row();?>
-        <?php if( get_row_layout() == 'image' ):
-        	$image = get_sub_field('image');
-        	$caption = get_sub_field('caption');
-        	?>
-        	<div class="sidebar_div">
-        	<img src="<?php echo $image;?>">
-        	<?php if($caption):?>
-        		<div class="caption"><?php echo $caption;?></div>
-        	<?php endif;?>
-        	</div>
-        <?php elseif( get_row_layout() == 'text' ): ?>
-        <?php endif; endwhile; endif;?>
-    </div>
-
 
 </div>
 </article>

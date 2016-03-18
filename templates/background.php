@@ -4,7 +4,7 @@
 <section id="back_projects">
 <div class="background">
   <div class="scene">
-    <div class="layer" data-depth="0.20" >
+    <div class="layer">
       <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/01.jpg" />
     </div>
   </div>
@@ -20,8 +20,7 @@
 <section id="back_information">
 <div class="background">
   <div class="scene">
-    <div class="layer" data-depth="0.20" >
-      <!-- <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/black.jpg" /> -->
+    <div class="layer">
     </div>
   </div>
 </div>
@@ -30,7 +29,7 @@
 <div id="back_background">
   <div class="background">
     <div class="scene">
-      <div class="layer" data-depth="0.20" >
+      <div class="layer">
         <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/02.jpg" />
       </div>
     </div>

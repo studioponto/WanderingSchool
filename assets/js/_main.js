@@ -103,10 +103,8 @@ $(window).bind("resize", function() {
 $('img.fullBleed').fullBleed({
   className: 'fullbleedimg'
 });
-
-
-$('.scene').parallax({
-  
+$('.grid').packery({
+  percentPosition: true
 });
 
 
@@ -189,6 +187,10 @@ $("a.p-link").click(function(){
 $('a.p-link').click(function(){
 
 });
+
+$('a.p-link-projects').mousetip('.tip-projects', 0, 0);
+$('a.p-link-programme').mousetip('.tip-programme', 0, 0);
+$('a.p-link-information').mousetip('.tip-information', 0, 0);
 
 
 /* ==========================================================================

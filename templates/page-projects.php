@@ -10,11 +10,13 @@ $args = array(
 query_posts($args);
 ?>
 <div class="container-fluid">
+	<div class="row"><div class="col-xs-12 col-md-10 col-md-offset-1"><div class="grid">
 <?php $i = 0; ?>
 <?php while (have_posts()) : the_post(); $i++; ?>
   <?php get_template_part('templates/content'); ?>
-  <?php if ($i % 3 == 0) echo '<div class="clearfix"></div>'?>
+  
 <?php endwhile; ?>
+	</div></div></div>
 </div>
 
 <?php wp_reset_query(); ?>
