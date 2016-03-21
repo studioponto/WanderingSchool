@@ -53,7 +53,7 @@ $(window).bind("resize", function() {
   $('.floorplan_inside').height(height);
   $('.single_tools').width(widthsection);
 
-  $('.background').width(width);
+  $('.background').width(widthsection);
   $('.background').addClass('back_active');
 
 
@@ -148,6 +148,20 @@ $( thumb ).mouseenter(function() {
             $(this).removeClass('selected'); // $(this), not the id element
         });
         $('#project_thumbs').removeClass('selected');
+});
+
+/* ==========================================================================
+   home link
+   ========================================================================== */
+/*click*/
+$('#spinner').click(function(){
+  $("#spinner").addClass('loadcomplete');
+  $("body").addClass('loadcomplete');
+
+    setTimeout(function(){
+      $(".wrap-section").removeClass('splash-active');
+    }, 1000);
+
 });
 
 

@@ -9,38 +9,24 @@
 
 <script type="text/javascript">
 	$(window).load(function() {
-		setTimeout(function(){
-			$('.grid').packery({
-				percentPosition: true
-			});
-			$("#spinner").addClass('loadcomplete');
-			$("body").addClass('loadcomplete');
-			$("#spinner").fadeOut(100);
-		}, 3000);
-		setTimeout(function(){
-			$(".wrap-section").removeClass('splash-active');
-		}, 3700);
-
-		// setTimeout(function(){
-		// 	var post_div = $('#information');
-		//     var post_div_id = $(post_div).attr("id");
-
-		//     $('section').removeClass('close');
-		//     $('section').removeClass('active');
-		//     $(post_div).addClass('active');
-		//     $(post_div).prevAll().addClass('close');
-		//     $(post_div).nextAll().addClass('close');
-
-		//     $('#back_'+post_div_id).addClass('active');
-		//     $('#back_'+post_div_id).prevAll().addClass('close');
-		//     $('#back_'+post_div_id).nextAll().addClass('close');
-		// }, 0);
-
-		
-
-
+		$('.grid').packery({
+			percentPosition: true
+		});
 	});
 </script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35102715-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 
 </body>
 </html>
