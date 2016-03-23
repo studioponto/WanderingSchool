@@ -13,6 +13,8 @@ if( $my_posts ) : ?>
 <div class="container-fluid">
 	<div class="col-xs-12 col-md-10 col-md-offset-1">
 		<?php the_content(); ?>
+
+		<div class="info_extra"><?php the_field('extra_info');?></div>
 	</div>
 
 </div>

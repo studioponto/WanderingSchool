@@ -1,4 +1,7 @@
-<div id="background">
+<div id="background" class="splash-active">
+
+<!--Splash-->
+<?php get_template_part('templates/splash'); ?>
 
 <!--Projects-->
 <section id="back_projects">

@@ -53,7 +53,7 @@ $(window).bind("resize", function() {
   $('.floorplan_inside').height(height);
   $('.single_tools').width(widthsection);
 
-  $('.background').width(widthsection);
+  // $('.background').width(widthsection);
   $('.background').addClass('back_active');
 
 
@@ -154,15 +154,31 @@ $( thumb ).mouseenter(function() {
    home link
    ========================================================================== */
 /*click*/
-$('#spinner').click(function(){
+$('.loader').click(function(){
   $("#spinner").addClass('loadcomplete');
   $("body").addClass('loadcomplete');
 
+  $("#background").removeClass('splash-active');
+  $(".wrap-section").removeClass('splash-active');
+
     setTimeout(function(){
-      $(".wrap-section").removeClass('splash-active');
+      $(".wrap-section").removeClass('slide-active');
+    }, 1);
+
+    setTimeout(function(){
+      $('section').removeClass('close');
+      $('section').removeClass('active');
+      $('#information').addClass('active');
+      $('#information').prevAll().addClass('close');
+      $('#information').nextAll().addClass('close');
+
+      $('#back_information').addClass('active');
+      $('#back_information').prevAll().addClass('close');
+      $('#back_information').nextAll().addClass('close');
     }, 1000);
 
 });
+
 
 
 /* ==========================================================================
@@ -192,9 +208,11 @@ $('a.p-link').click(function(){
 
 });
 
-$('a.p-link-projects').mousetip('.tip-projects', 0, 0);
-$('a.p-link-programme').mousetip('.tip-programme', 0, 0);
-$('a.p-link-information').mousetip('.tip-information', 0, 0);
+// $('a.p-link-projects').mousetip('.tip-projects', 0, 0);
+// $('a.p-link-programme').mousetip('.tip-programme', 0, 0);
+// $('a.p-link-information').mousetip('.tip-information', 0, 0);
+
+$('a.p-link-homepage').mousetip('.tip-information', 0, 0);
 
 
 /* ==========================================================================
@@ -294,6 +312,10 @@ if ($("body").hasClass("single-post")) {
 
     
 }
+
+/** draggable **/
+
+
 
 /*projects inits*/
 var projects = (function() { var that = {};  that.init = function () {

@@ -12,6 +12,7 @@
 		$('.grid').packery({
 			percentPosition: true
 		});
+    $('.loader').addClass('loader-finish');
 	});
 </script>
 
