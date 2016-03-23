@@ -36,7 +36,9 @@
 	</div>
 </div>
 <?php get_template_part('templates/page','projects-thumbs'); ?>
-
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/left.jpg" />
+</div>
 </section>
 
 
@@ -55,7 +57,9 @@
 		</div>
 	</div>
 </div>
-
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/center.jpg" />
+</div>
 </section>
 
 
@@ -73,6 +77,9 @@
 			<?php get_template_part('templates/page','information'); ?>
 		</div>
 	</div>
+</div>
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/right.jpg" />
 </div>
 </section>
 

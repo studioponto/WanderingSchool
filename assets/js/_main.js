@@ -53,7 +53,7 @@ $(window).bind("resize", function() {
   $('.floorplan_inside').height(height);
   $('.single_tools').width(widthsection);
 
-  // $('.background').width(widthsection);
+  $('.background').width(widthsection);
   $('.background').addClass('back_active');
 
 
