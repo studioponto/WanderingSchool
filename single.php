@@ -12,13 +12,16 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 
 <?php } else { ?>
 
-<?php get_template_part('templates/content', 'single'); ?>
+
+
 
 <?php get_template_part('templates/head'); ?>
 
 <!--Projects-->
 <section id="projects">
-	<a class="p-link" href="<?php echo home_url(); ?>/projects/"></a>
+
+<div class="section_inside">
+	<a class="p-link p-link-projects" href="<?php echo home_url(); ?>/projects/"></a>
 	<div class="page-title">
 		<h1>Projects</h1>
 	</div>
@@ -28,42 +31,56 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 		</div>
 	</div>
 	<div class="single_post">
-		<div class="page-title">
-			<h1>Close</h1>
+		<div class="single_tools">
+		    <div class="container-fluid">
+		        <div class="col-xs-12 col-md-offset-1 col-md-10">
+		            <a class="look_programme" href="<?php echo home_url(); ?>/programme/">Look up on Programme</a>
+		            <a class="back_projects" href="<?php echo home_url(); ?>/projects/">Back to Projects</a>
+		        </div>
+		    </div>
 		</div>
 
-		<div class="single_load"></div>
+		<div class="single_load"><div class="loader"></div></div>
 		<div class="p-wrap">
 			<div class="p-single">
 				<?php get_template_part('templates/content', 'single'); ?>
 			</div>
 		</div>
 	</div>
+</div>
+<?php get_template_part('templates/page','projects-thumbs'); ?>
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/left.jpg" />
+</div>
 </section>
+
+
 
 <!--Programme-->
 <section id="programme">
-	<a class="p-link" href="<?php echo home_url(); ?>/programme/"></a>
+
+<div class="section_inside">
+	<a class="p-link p-link-programme" href="<?php echo home_url(); ?>/programme/"><span class="tip">Programme</span></a>
+	<div class="page-title">
+		<h1>Programme</h1>
+	</div>
 	<div class="p-wrap">
 		<div class="p-single">
 			<?php get_template_part('templates/page','programme'); ?>
 		</div>
 	</div>
+</div>
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/center.jpg" />
+</div>
 </section>
 
-<!--Floorplan-->
-<section id="floorplan">
-	<a class="p-link" href="<?php echo home_url(); ?>/floorplan/"></a>
-	<div class="p-wrap">
-		<div class="p-single">
-			<?php get_template_part('templates/page','floorplan'); ?>
-		</div>
-	</div>
-</section>
+
 
 <!--Information-->
 <section id="information">
-	<a class="p-link" href="<?php echo home_url(); ?>/information/"></a>
+<div class="section_inside">
+	<a class="p-link p-link-information" href="<?php echo home_url(); ?>/information/"><span class="tip">Information</span></a>
 	<div class="page-title">
 		<h1>Information</h1>
 	</div>
@@ -73,9 +90,15 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 			<?php get_template_part('templates/page','information'); ?>
 		</div>
 	</div>
+</div>
+<div class="background">
+      <img class="fullBleed" src="<?php bloginfo('template_url'); ?>/assets/img/background/01/right.jpg" />
+</div>
 </section>
 
+
 <?php get_template_part('templates/footer'); ?>
+
 
 <?php } ?>
 

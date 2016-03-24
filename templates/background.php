@@ -1,7 +1,13 @@
 <div id="background" class="splash-active">
 
 <!--Splash-->
-<?php get_template_part('templates/splash'); ?>
+<?php
+if ( is_front_page() ) {
+  get_template_part('templates/splash');
+} else {
+  get_template_part('templates/splash_two');
+}
+?>
 
 <!--Projects-->
 <section id="back_projects">

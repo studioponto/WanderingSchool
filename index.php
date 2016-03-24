@@ -1,9 +1,5 @@
 <?php get_template_part('templates/head'); ?>
 
-<span class="tip tip-projects">Projects</span>
-<span class="tip tip-programme">Programme</span>
-<span class="tip tip-information">Information</span>
-
 <!--Projects-->
 <section id="projects">
 
@@ -21,8 +17,8 @@
 		<div class="single_tools">
 		    <div class="container-fluid">
 		        <div class="col-xs-12 col-md-offset-1 col-md-10">
-		            <a class="look_programme">Look up on Programme</a>
-		            <a class="back_projects">Back to Projects</a>
+		            <a class="look_programme" href="<?php echo home_url(); ?>/programme/">Look up on Programme</a>
+		            <a class="back_projects" href="<?php echo home_url(); ?>/projects/">Back to Projects</a>
 		        </div>
 		    </div>
 		</div>
