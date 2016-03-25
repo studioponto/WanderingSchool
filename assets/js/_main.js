@@ -289,20 +289,20 @@ $(".look_programme").click(function(){
 
 
 /** call on page **/
-if ($("body").hasClass("single-post")) {
-    var post_div = $('section#projects');
+// if ($("body").hasClass("single-post")) {
+//     var post_div = $('section#projects');
 
-    $('section').removeClass('close');
-    $('section').removeClass('active');
-    $(post_div).addClass('active');
-    $(post_div).prevAll().addClass('close');
-    $(post_div).nextAll().addClass('close');
+//     $('section').removeClass('close');
+//     $('section').removeClass('active');
+//     $(post_div).addClass('active');
+//     $(post_div).prevAll().addClass('close');
+//     $(post_div).nextAll().addClass('close');
 
-    $('.single_post').fadeIn(0);
-    $('.single_load').fadeOut(0);
+//     $('.single_post').fadeIn(0);
+//     $('.single_load').fadeOut(0);
 
     
-}
+// }
 
 /** draggable **/
 
@@ -358,6 +358,8 @@ $('.loader').click(function(){
       $('#back_projects').addClass('active');
       $('#back_projects').prevAll().addClass('close');
       $('#back_projects').nextAll().addClass('close');
+       $('.single_post').fadeIn(0);
+      $('.single_load').fadeOut(0);
     }, 1000);
 
 });

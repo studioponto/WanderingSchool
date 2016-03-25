@@ -3,7 +3,6 @@
 <div class="container-fluid">
 <div class="row"><div class="col-xs-12 col-md-offset-1 col-md-10">
 <div class="day-wrap hide"><div class="day-title col-xs-12">Programme</div><div class="day-content col-xs-8">
-<?php if ( have_posts() ) : ?>
 <?php
 $args = array(
 	'post_type'		=> 'events',
@@ -40,7 +39,7 @@ $args = array(
 <?php endwhile; ?>
 
 <?php wp_reset_query(); ?>
-<?php endif; ?>
+
 </div>
 </div>
 </div></div>
