@@ -11,7 +11,7 @@ if( $my_posts ) : ?>
 <?php $infoid = $my_posts[0]->ID; $my_query = new WP_Query('page_id='.$infoid); while ($my_query->have_posts()) : $my_query->the_post(); $do_not_duplicate = $post->ID;?>
 <article <?php post_class(); ?>>
 <div class="container-fluid">
-	<div class="col-xs-12 col-md-10 col-md-offset-1">
+	<div class="col-xs-12 col-lg-10 col-lg-offset-1">
 		<?php the_content(); ?>
 
 		<div class="info_extra"><?php the_field('extra_info');?></div>

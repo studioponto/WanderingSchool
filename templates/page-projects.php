@@ -10,7 +10,7 @@ $args = array(
 query_posts($args);
 ?>
 <div class="container-fluid">
-	<div class="row"><div class="col-xs-12 col-md-10 col-md-offset-1"><div class="grid">
+	<div class="row"><div class="col-xs-12 col-lg-10 col-lg-offset-1"><div class="grid">
 <?php $i = 0; ?>
 <?php while (have_posts()) : the_post(); $i++; ?>
   <?php get_template_part('templates/content'); ?>

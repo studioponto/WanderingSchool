@@ -6,7 +6,7 @@ $description = get_field('description');
 $participant = get_field('participant');
 ?>
 
-<div class="single_title col-xs-12 col-md-offset-1 col-md-10">
+<div class="single_title col-xs-12 col-lg-offset-1 col-lg-10">
     <div class="thumb_info">
         <div class="thumb_title"><?php the_title(); ?></div>
         <?php if($participant):?>
@@ -19,7 +19,7 @@ $participant = get_field('participant');
 
 <div class="clearfix"></div>
 
-<div class="single_description col-xs-12 col-md-offset-1 col-md-10">
+<div class="single_description col-xs-12 col-lg-offset-1 col-lg-10">
     <?php echo $description;?>
 </div>
 

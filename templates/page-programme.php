@@ -1,7 +1,7 @@
 <article>
 
 <div class="container-fluid">
-<div class="row"><div class="col-xs-12 col-md-offset-1 col-md-10">
+<div class="row"><div class="col-xs-12 col-lg-offset-1 col-lg-10">
 <div class="day-wrap hide"><div class="day-title col-xs-12">Programme</div><div class="day-content col-xs-8">
 <?php
 $args = array(

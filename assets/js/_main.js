@@ -44,51 +44,46 @@ $(window).bind("resize", function() {
   var header = $('header').height();
   var footer = $('footer').height();
 
-  var widthsection = ((width*67)/100);
-  var widthsectionclose = ((width-widthsection)/2);
 
-
-  $('.p-single,.p-wrap').width(widthsection);
-  $('.floorplan_inside').width(widthsection);
-  $('.floorplan_inside').height(height);
-  $('.single_tools').width(widthsection);
-
-  $('.background').width(widthsection);
-  $('.background').addClass('back_active');
 
 
   
-  if( window.innerHeight > window.innerWidth && width > 992){
-    /* desktop portrait */
-    $('body').addClass('portrait desktop');
-    $('body').removeClass('landscape mobile tablet');
-
-  } else if ( window.innerHeight > window.innerWidth && width > 769 ){
-    /* tablet portrait */
-    $('body').addClass('portrait tablet');
-    $('body').removeClass('landscape mobile desktop');
-
-  } else if ( window.innerHeight > window.innerWidth && width < 768 ){
-    /* mobile portrait */
-    $('body').addClass('portrait mobile');
-    $('body').removeClass('landscape tablet desktop');
-
-  } else if ( window.innerHeight < window.innerWidth && width > 992 ){
-    /* desktop landscape */
-    $('body').addClass('landscape desktop');
-    $('body').removeClass('portrait tablet mobile');
-    $('.profile').removeClass('open-top');
-
-  } else if ( window.innerHeight < window.innerWidth && width > 769 ){
+  if (width > 766 ){
     /* tablet landscape */
-    $('body').addClass('landscape tablet');
-    $('body').removeClass('portrait mobile desktop');
-    $('.profile').removeClass('open-top');
+    $('body').addClass('desktop tablet');
+    $('body').removeClass('mobile');
+
+
+    var widthsection = ((width*67)/100);
+    var widthsectionclose = ((width-widthsection)/2);
+
+
+    $('.p-single,.p-wrap').width(widthsection);
+    $('.floorplan_inside').width(widthsection);
+    $('.floorplan_inside').height(height);
+    $('.single_tools').width(widthsection);
+
+    $('.background').width(widthsection);
+    $('.background').addClass('back_active');
+
 
   } else {
     /* mobile landscape */
-    $('body').addClass('landscape mobile');
-    $('body').removeClass('portrait tablet desktop');
+    $('body').addClass('mobile');
+    $('body').removeClass('desktop tablet');
+
+    var widthsectionmob = ((width*80)/100);
+    var widthsectionclosemob = ((width-widthsectionmob)/2);
+
+
+    $('.p-single,.p-wrap').width(widthsectionmob);
+    $('.floorplan_inside').width(widthsectionmob);
+    $('.floorplan_inside').height(height);
+    $('.single_tools').width(widthsectionmob);
+
+    $('.background').width(widthsectionmob);
+    $('.background').addClass('back_active');
+
 
   }
 
@@ -321,10 +316,9 @@ var floorplan = (function() { var that = {};  that.init = function () {
 /*information inits*/
 var information = (function() { var that = {};  that.init = function () {
 
- 
-
-
 }; return that; })();
+
+
 
 
     }
