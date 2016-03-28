@@ -260,7 +260,7 @@ $(".back_projects").click(function(){
 
 $.ajaxSetup({cache:false});
 $(".look_programme").click(function(){
-    $('.single_post').fadeOut(400);
+    //$('.single_post').fadeOut(400);
     var post_div = $(this);
     var post_link = $(this).attr("href");
 

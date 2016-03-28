@@ -16,7 +16,7 @@ $show_end_t = get_sub_field('show_end_time');
 <div class="event_time">
 <?php echo $start_t;?>
 <?php if($show_end_t):?>
-    — 
+    <Br/>— 
 <?php echo $end_t;?>
 <?php endif;?>
 
