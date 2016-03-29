@@ -329,8 +329,6 @@ var information = (function() { var that = {};  that.init = function () {
 /* ==========================================================================
    home link
    ========================================================================== */
-/*click*/
-$('.loader').click(function(){
 
   $("#spinner").addClass('loadcomplete');
   $("body").addClass('loadcomplete');
@@ -356,7 +354,6 @@ $('.loader').click(function(){
       $('.single_load').fadeOut(0);
     }, 1000);
 
-});
 
 
     }
@@ -369,7 +366,6 @@ $('.loader').click(function(){
    ========================================================================== */
 /*click*/
 $('.loader').click(function(){
-
   var post_link = $('#information').attr("href");
 
   $("#spinner").addClass('loadcomplete');
@@ -394,7 +390,6 @@ $('.loader').click(function(){
       $('#back_information').nextAll().addClass('close');
       window.history.pushState('obj', 'newtitle', post_link);
     }, 1000);
-
 });
 
 
@@ -403,7 +398,6 @@ $('.loader').click(function(){
   // Home page
   programme: {
     init: function() {
-$('.loader').click(function(){
 
 
  var post_link = $('#programme').attr("href");
@@ -431,7 +425,7 @@ $('.loader').click(function(){
       $('#back_programme').nextAll().addClass('close');
       window.history.pushState('obj', 'newtitle', post_link);
     }, 1000);
-});
+
 
 
     }
@@ -439,7 +433,7 @@ $('.loader').click(function(){
   // Home page
   projects: {
     init: function() {
-$('.loader').click(function(){
+
 
 
  var post_link = $('#projects').attr("href");
@@ -467,7 +461,7 @@ $('.loader').click(function(){
       $('#back_projects').nextAll().addClass('close');
       window.history.pushState('obj', 'newtitle', post_link);
     }, 1000);
-});
+
 
 
     }
@@ -475,7 +469,7 @@ $('.loader').click(function(){
   // About us page, note the change from about-us to about_us.
   information: {
     init: function() {
-$('.loader').click(function(){
+
 
    var post_link = $('#information').attr("href");
 
@@ -502,7 +496,7 @@ $('.loader').click(function(){
       $('#back_information').nextAll().addClass('close');
       window.history.pushState('obj', 'newtitle', post_link);
     }, 1000);
-});
+
 
     }
   }
