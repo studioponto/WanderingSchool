@@ -1,9 +1,9 @@
 <div id="spinner">
-<img class="sticker sticker_1 draggable" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_1.png">
-  <img class="sticker sticker_2 draggable" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_2.png">
-  <img class="sticker sticker_4 draggable" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_4.png">
-  <img class="sticker sticker_5 draggable" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_5.png">
-  <img class="sticker sticker_6 draggable" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_6.png">
+<img class="sticker sticker_1" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_1.png">
+  <img class="sticker sticker_2" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_2.png">
+  <img class="sticker sticker_4" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_4.png">
+  <img class="sticker sticker_5" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_5.png">
+  <img class="sticker sticker_6" src="<?php bloginfo('template_url'); ?>/assets/img/background/sticker_6.png">
 
 
   <div class="brand">
